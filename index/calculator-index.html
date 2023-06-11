@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="calculator-style.css">
+</head>
+<body>
+  <div class="toggle-container">
+    <div class="toggle-buttons">
+      <button id="light-mode-button" onclick="setLightMode()"><img src="src/icon-lightmode.png" id="icon-lightmode"></button>
+      <button id="dark-mode-button" onclick="setDarkMode()"><img src="src/icon-darkmode.png" id="icon-darkmode"></button>
+    </div>
+    <div class="toggle-square"></div>
+  </div>  
+  <div class="result">
+    <input type="text" id="display" oninput="handleInput()" autofocus>
+  </div>
+  <div class="calculator">
+    <div class="buttons-top">
+      <button onclick="clearDisplay()" id="buttongreen">AC</button>
+      <button onclick="appendCharacter('½')" id="buttongreen">½</button>
+      <button onclick="appendCharacter('%')" id="buttongreen">%</button>
+      <button onclick="appendCharacter('÷')" id="buttonred">÷</button>
+    </div>
+    <div class="buttons">
+      <button onclick="appendCharacter('7')">7</button>
+      <button onclick="appendCharacter('8')">8</button>
+      <button onclick="appendCharacter('9')">9</button>
+      <button onclick="appendCharacter('*')" id="buttonred">x</button>
+      <button onclick="appendCharacter('4')">4</button>
+      <button onclick="appendCharacter('5')">5</button>
+      <button onclick="appendCharacter('6')">6</button>
+      <button onclick="appendCharacter('-')" id="buttonred">–</button>
+      <button onclick="appendCharacter('1')">1</button>
+      <button onclick="appendCharacter('2')">2</button>
+      <button onclick="appendCharacter('3')">3</button>
+      <button onclick="appendCharacter('+')" id="buttonred">+</button>
+      <button onclick="appendCharacter('0')">R</button>
+      <button onclick="appendCharacter('0')">0</button>
+      <button onclick="appendCharacter('.')">.</button>
+      <button onclick="calculate()" id="buttonred">=</button>
+    </div>
+  </div>
+
+  <script src="calculator-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+/* Estilos gerais */
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  background-color: #fffefe;
+  transition: background-color 0.5s ease;
+}
+
+/* Estilos do resultado */
+.result {
+  max-width: 350px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  height: 400px;
+  display: flex;
+}
+
+#display {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 28px;
+  text-align: right;
+  border: none;
+  background-color: transparent;
+  align-self: flex-end;
+  transition: color 0.5s ease;
+}
+
+/* Estilos da calculadora */
+.calculator {
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: #f8f8f9;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.buttons-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons-bottom {
+  display: flex;
+}
+
+.buttons-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons-side button {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Estilos dos botões */
+button {
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #e5e5e5;
+}
+
+#buttonred {
+  color: #ef8a8b;
+}
+
+#buttongreen {
+  color: #3afad7;
+}
+
+/* Estilos dos botões de alternância */
+.toggle-buttons {
+  position: fixed;
+  top: 10px;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 0 0px;
+}
+
+#icon-lightmode,
+#icon-darkmode {
+  width: 25px;
+  height: 25px;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+  background-color: #292c37;
+}
+
+.dark-mode-text {
+  color: #fffefe;
+}
+
+.dark-mode-bg {
+  background-color: #262b32;
+}
+
+.dark-mode-button {
+  background-color: #262b32;
+  color: #fffefe;
+}
+
+.calculator.dark-mode {
+  transition: background-color 0.5s ease;
+}
+
+.calculator.dark-mode button {
+  transition: background-color 0.5s ease;
+}
+
+/* Estilos do quadrado de alternância */
+.toggle-square {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #f6f7f6;
+  border-radius: 5px;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+body.dark-mode .toggle-square {
+  transform: translateX(100%);
+  background-color: #262b32;
+}
+
+/* Estilos personalizados para a div */
+.custom-div {
+  width: 50px;
+  height: 10px;
+  background-color: #f6f7f6;
+  position: relative;
+  z-index: 2;
+}
+
+body.dark-mode .custom-div {
+  background-color: #262b32;
+}
