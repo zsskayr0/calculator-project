@@ -96,3 +96,26 @@ function setDarkMode() {
   toggleSquare.style.transform = 'translateX(100%)';
   toggleSquare.style.backgroundColor = '#262b32';
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var display = document.getElementById('display');
+  var calculateButton = document.getElementById('buttonred');
+
+  calculateButton.addEventListener('click', calculate);
+  display.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      calculate();
+    }
+  });
+
+  function calculate() {
+    var expression = display.value;
+    var result;
+
+    try {
+      result = eval(expression);
+      display.value = result;
+    } catch (error) {
+      display.value = 'Erro';
+    }
+  }
+});

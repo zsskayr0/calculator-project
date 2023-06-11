@@ -28,6 +28,10 @@ body {
   transition: color 0.5s ease;
 }
 
+#display:focus {
+  outline: none;
+}
+
 /* Estilos da calculadora */
 .calculator {
   max-width: 350px;
