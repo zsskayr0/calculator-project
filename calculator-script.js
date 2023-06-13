@@ -12,7 +12,22 @@ function appendCharacter(character) {
 
 function calculate() {
   try {
-    const result = eval(expression);
+    let result;
+
+    if (expression.includes('+')) {
+      const operands = expression.split('+');
+      result = add(parseFloat(operands[0]), parseFloat(operands[1]));
+    } else if (expression.includes('-')) {
+      const operands = expression.split('-');
+      result = subtract(parseFloat(operands[0]), parseFloat(operands[1]));
+    } else if (expression.includes('*')) {
+      const operands = expression.split('*');
+      result = multiply(parseFloat(operands[0]), parseFloat(operands[1]));
+    } else if (expression.includes('/')) {
+      const operands = expression.split('/');
+      result = divide(parseFloat(operands[0]), parseFloat(operands[1]));
+    }
+
     expression = result.toString();
     updateDisplay();
   } catch (error) {
@@ -20,6 +35,25 @@ function calculate() {
     updateDisplay();
     alert('Erro na expressão!');
   }
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error('Divisão por zero!');
+  }
+  return a / b;
 }
 
 function updateDisplay() {
