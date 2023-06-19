@@ -70,7 +70,7 @@ function toggleMode() {
   const calculator = document.querySelector('.calculator');
   const buttons = document.querySelectorAll('.calculator button');
 
-  body.classList.toggle('dark-mode');
+  body.classList.toggle('dark-mode'); 
   display.classList.toggle('dark-mode-text');
   calculator.classList.toggle('dark-mode-bg');
 
