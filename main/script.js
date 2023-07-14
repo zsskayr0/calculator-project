@@ -69,18 +69,18 @@ function toggleMode() {
   const display = document.getElementById('display');
   const calculator = document.querySelector('.calculator');
   const buttons = document.querySelectorAll('.calculator button');
+  const darkModeSwitch = document.getElementById('darkmode-check');
 
-  body.classList.toggle('dark-mode'); 
-  display.classList.toggle('dark-mode-text');
-  calculator.classList.toggle('dark-mode-bg');
-
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.toggle('dark-mode-button');
+  if (darkModeSwitch.checked) {
+    setDarkMode();
+  } else {
+    setLightMode();
   }
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  toggleMode();
+  const darkModeSwitch = document.getElementById('darkmode-check');
+  darkModeSwitch.checked = document.body.classList.contains('dark-mode');
 });
 
 function setLightMode() {
@@ -88,8 +88,6 @@ function setLightMode() {
   const display = document.getElementById('display');
   const calculator = document.querySelector('.calculator');
   const buttons = document.querySelectorAll('.calculator button');
-  const toggleButtons = document.querySelectorAll('.toggle-buttons button');
-  const toggleSquare = document.querySelector('.toggle-square');
 
   body.classList.remove('dark-mode');
   display.classList.remove('dark-mode-text');
@@ -98,13 +96,6 @@ function setLightMode() {
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].classList.remove('dark-mode-button');
   }
-
-  for (var i = 0; i < toggleButtons.length; i++) {
-    toggleButtons[i].classList.remove('active');
-  }
-
-  toggleSquare.style.transform = 'translateX(0)';
-  toggleSquare.style.backgroundColor = '#f6f7f6';
 }
 
 function setDarkMode() {
@@ -112,8 +103,6 @@ function setDarkMode() {
   const display = document.getElementById('display');
   const calculator = document.querySelector('.calculator');
   const buttons = document.querySelectorAll('.calculator button');
-  const toggleButtons = document.querySelectorAll('.toggle-buttons button');
-  const toggleSquare = document.querySelector('.toggle-square');
 
   body.classList.add('dark-mode');
   display.classList.add('dark-mode-text');
@@ -122,14 +111,9 @@ function setDarkMode() {
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].classList.add('dark-mode-button');
   }
-
-  for (var i = 0; i < toggleButtons.length; i++) {
-    toggleButtons[i].classList.remove('active');
-  }
-
-  toggleSquare.style.transform = 'translateX(100%)';
-  toggleSquare.style.backgroundColor = '#262b32';
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var display = document.getElementById('display');
