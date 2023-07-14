@@ -18,7 +18,7 @@ This is a simple calculator project implemented using JavaScript, HTML, and CSS.
 
 ## Live Demo
 
-You can try out the calculator project by visiting the [GitHub Pages](https://zsskayr0.github.io/calculator-project/) for this repository.
+You can try out the calculator project by visiting the [GitHub Pages](https://zsskayr0.github.io/calculator-project/main/ndex.html) for this repository.
 
 ## Usage
 
